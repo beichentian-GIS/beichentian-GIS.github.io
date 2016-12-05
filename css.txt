@@ -1,0 +1,3 @@
+.port-thumb{
+	border:4px dashed gray;
+}

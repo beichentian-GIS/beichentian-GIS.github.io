@@ -1,0 +1,29 @@
+https://api.mapbox.com/v4/davistian123.92604562/page.html?access_token=pk.eyJ1IjoiZGF2aXN0aWFuMTIzIiwiYSI6ImNpdGkzbHZmcDAzbWcyeW1remptajNsdmYifQ.SORQG7JQe72iomMt3l6lQg#4/34.20/-100.72
+https://a.tiles.mapbox.com/v4/davistian123.92604562.html?access_token=pk.eyJ1IjoiZGF2aXN0aWFuMTIzIiwiYSI6ImNpdGkzbHZmcDAzbWcyeW1remptajNsdmYifQ.SORQG7JQe72iomMt3l6lQg
+
+<div class="col-md-4 col-sm-6 col-xs-12 portfolio-item">
+					<div class="thumbnail portfolio-thumbnail center-block">
+						<a href="https://api.mapbox.com/v4/davistian123.92604562/page.html?access_token=pk.eyJ1IjoiZGF2aXN0aWFuMTIzIiwiYSI6ImNpdGkzbHZmcDAzbWcyeW1remptajNsdmYifQ.SORQG7JQe72iomMt3l6lQg#4/16.68/-82.44" target="_blank">
+							<img class="img-responsive center-block img-rounded" src="images/tomthumbnail.png" alt="Higher Education Map"/>
+						</a>
+					</div>
+					<div class="portfolio-caption">
+						<h4>Tom Clancy The Division</h4>
+						<p class="text-muted"></p>
+					</div>
+				</div>
+<div class="col-md-4 col-sm-6 col-xs-12 portfolio-item">
+
+
+
+
+.portfolio-thumbnail {
+	position:relative;
+	background-color: white;
+	border-width: 4px;
+	height: 320px;
+	border-style: solid;
+	border-color: #660000;
+	overflow: hidden;
+	margin: 0 auto;
+}
