@@ -51,6 +51,12 @@ p{
 		padding-left: 0px;
 	background-color:#FFFFFF;
 	background-size:cover;
+	text-align:center;
+}
+
+.site-footer li{
+	display:inline;
+	padding:0.5%;
 }
 
 #end li{
