@@ -79,6 +79,22 @@ p{
 	margin-top:0%;
 }
 
+.ribbonHolder{
+	position:absolute;
+	width:80px;
+	height:112px;
+	right:0;
+	z-index:100;
+	background-color:transparent;
+	background-image:url("../images/Red__Ribbon_Small.png");
+	background-repeat:no-repeat;
+	background-attachment: scroll;
+	background-clip: border-box;
+	background-origin: padding-box;
+	display:inline-block;
+	overflow:hidden;
+}
+
 .site-footer{
 	border-top:1px solid #e8e8e8;
 		border-top-width: 1px;
