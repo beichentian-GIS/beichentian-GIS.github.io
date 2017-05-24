@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#contact_form').bootstrapValidator({
+    $('#contact_form').jqBootstrapValidation({
         // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
@@ -56,7 +56,7 @@ $(document).ready(function() {
         })
         .on('success.form.bv', function(e) {
             $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
-                $('#contact_form').data('bootstrapValidator').resetForm();
+                $('#contact_form').data('jqBootstrapValidation').resetForm();
 
             // Prevent form submission
             e.preventDefault();
@@ -64,8 +64,8 @@ $(document).ready(function() {
             // Get the form instance
             var $form = $(e.target);
 
-            // Get the BootstrapValidator instance
-            var bv = $form.data('bootstrapValidator');
+            // Get the jqBootstrapValidation instance
+            var bv = $form.data('jqBootstrapValidation');
 
             // Use Ajax to submit form data
             $.post($form.attr('action'), $form.serialize(), function(result) {
