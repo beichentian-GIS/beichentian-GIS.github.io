@@ -97,6 +97,15 @@ p{
 	font-style:italic;
 }
 
+.resume-hr{
+	margin:0px;
+    border:none;
+    color:#5fbfef;
+    height:1px;
+    background:#2b669a;
+	background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 800, from(black), to(white));
+}
+
 .site-footer{
 	border-top:1px solid #e8e8e8;
 		border-top-width: 1px;
