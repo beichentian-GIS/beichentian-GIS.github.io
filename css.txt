@@ -1,5 +1,0 @@
-.port-thumb{
-	border:4px dashed gray;
-}
-
-https://bootstrapbay.com/blog/working-bootstrap-contact-form/
