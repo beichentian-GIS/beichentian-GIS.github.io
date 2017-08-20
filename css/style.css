@@ -79,6 +79,33 @@ p{
 	margin-top:0%;
 }
 
+.portfolio-thumbnail{
+	opacity:1;
+	transition:.5s ease;
+	backface-visibility:hidden;
+}
+
+.portfolio-caption{
+	opacity:0;
+	transition:.5s ease;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	text-shadow: 0 0 0.3em #FFF, 0 0 0.3em #FFF, 0 0 0.3em #FFF;
+	padding:20px 0px;
+}
+
+.portfolio-item:hover .portfolio-thumbnail{
+	opacity:0.5;
+	background:linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+}
+
+.portfolio-item:hover .portfolio-caption{
+	opacity:1;
+}
+
 .ribbonHolder{
 	position:absolute;
 	width:80px;
