@@ -5,6 +5,31 @@
 	color: #b2d8b2;
 }
 
+ul.dropdown-menu{
+	background-color:#101010;
+}
+
+.dropdown-menu li a{
+	background-color:#333333;
+	color:#a9a9a9;
+	padding:0;
+}
+
+.dropdown:hover .dropdown-menu {
+    /** Show dropdown menu */
+    display: block;
+}
+
+.flag_menu{
+	height:45%;
+	width:45%;
+}
+
+.flag{
+	height:25%;
+	width:25%;
+}
+
 a{
 	font-family:Gill Sans MT;
 	font-size: 18px;

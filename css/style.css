@@ -26,12 +26,29 @@
     color: inherit;
 }
 
-.body-background{
-	background: radial-gradient(circle, #F8F8F8, #E8E8E8, rgb(80,80,80,0.6));
+ul.dropdown-menu{
+	background-color:#101010;
 }
 
-.foot-background{
-	background: radial-gradient(circle, #F8F8F8, #E8E8E8, rgb(80,80,80,0.6));
+.dropdown-menu li a{
+	background-color:#333333;
+	color:#a9a9a9;
+	padding:0;
+}
+
+.dropdown:hover .dropdown-menu {
+    /** Show dropdown menu */
+    display: block;
+}
+
+.flag_menu{
+	height:45%;
+	width:45%;
+}
+
+.flag{
+	height:25%;
+	width:25%;
 }
 
 a:hover{
