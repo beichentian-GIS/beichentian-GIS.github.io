@@ -49,6 +49,7 @@
 		
 		<div class="container">
 			<div class="col-md-12"><h2 style="margin-top:100px;">At A Glance: The "Come & Go" of Displaced Population...</h2></div>
+			
 			<div class="row">
 				<div class="col-md-12">
 					<p>European Refugee and Asylum Distribution by Origin and Destination, 2016</p>
@@ -135,7 +136,7 @@
 						[ 'United Kingdom', 'Asylum', 7165 ],
 						
 						[ 'Italy', 'Refugee', 49279 ],
-						[ 'Italy', 'Asylum', 15825 ],
+						[ 'Italy', 'Asylum', 15825 ]
 						
 						/*[ 'Refugee', 'Syria_', 3315896 ],
 						[ 'Refugee', 'Afghanistan_', 99743 ],
@@ -167,6 +168,188 @@
 
 					// Instantiate and draw our chart, passing in some options.
 					var chart = new google.visualization.Sankey(document.getElementById('sankeyRefugee16'));
+					chart.draw(data, options);
+				   }
+				</script>
+			</div>
+			
+			<div class="row" style="margin-top:50px;">
+				<div class="col-md-12">
+					<p>European Refugee and Asylum Distribution by Origin and Destination, 2014</p>
+				</div>
+				
+				<div id="sankeyRefugee14" class="col-md-12" style="width:900px; height:400px;"></div>
+				
+				<script type="text/javascript">
+					google.charts.load("current", {packages:["sankey"]});
+					google.charts.setOnLoadCallback(drawChart);
+					function drawChart() {
+					var data = new google.visualization.DataTable();
+					data.addColumn('string', 'From');
+					data.addColumn('string', 'To');
+					data.addColumn('number', 'Population');
+					data.addRows([
+						[ 'Afghanistan', 'Germany', 46837 ],
+						[ 'Afghanistan', 'Turkey', 37296 ],
+						[ 'Afghanistan', 'Sweden', 14353 ],
+						[ 'Afghanistan', 'United Kingdom', 10948 ],
+						[ 'Afghanistan', 'Italy', 10769 ],
+						[ 'Afghanistan', 'France', 4262 ],
+						
+						[ 'Pakistan', 'Germany', 13456 ],
+						[ 'Pakistan', 'Italy', 10830 ],
+						[ 'Pakistan', 'United Kingdom', 9519 ],
+						[ 'Pakistan', 'France', 3122 ],
+						[ 'Pakistan', 'Turkey', 1855 ],
+						[ 'Pakistan', 'Sweden', 601 ],
+						
+						[ 'Serbia and Kosovo', 'Germany', 37082 ],
+						[ 'Serbia and Kosovo', 'France', 14899 ],
+						[ 'Serbia and Kosovo', 'Sweden', 5090 ],
+						[ 'Serbia and Kosovo', 'Italy', 2815 ],
+						[ 'Serbia and Kosovo', 'United Kingdom', 451 ],
+						
+						[ 'Somalia', 'Sweden', 25096 ],
+						[ 'Somalia', 'Italy', 12644 ],
+						[ 'Somalia', 'Germany', 12591 ],
+						[ 'Somalia', 'United Kingdom', 9080 ],
+						[ 'Somalia', 'Turkey', 3409 ],
+						[ 'Somalia', 'France', 2411 ],
+						
+						[ 'Syria', 'Turkey', 1558149 ],
+						[ 'Syria', 'Germany', 70585 ],
+						[ 'Syria', 'Sweden', 53296 ],
+						[ 'Syria', 'United Kingdom', 5902 ],
+						[ 'Syria', 'France', 4121 ],
+						[ 'Syria', 'Italy', 1475 ],
+						
+						[ 'Turkey', 'Refugee', 1564504 ],
+						[ 'Turkey', 'Asylum', 36205 ],
+						
+						[ 'Germany', 'Refugee', 86638 ],
+						[ 'Germany', 'Asylum', 93913 ],
+						
+						[ 'Sweden', 'Refugee', 70951 ],
+						[ 'Sweden', 'Asylum', 27485 ],
+						
+						[ 'France', 'Refugee', 21571 ],
+						[ 'France', 'Asylum', 7244 ],
+						
+						[ 'United Kingdom', 'Refugee', 28216 ],
+						[ 'United Kingdom', 'Asylum', 7684 ],
+						
+						[ 'Italy', 'Refugee', 30798 ],
+						[ 'Italy', 'Asylum', 7735 ]
+					]);
+
+					// Set chart options
+					var options = {
+					  width: 600,
+					  sankey: {
+						node: {
+							label:{
+								fontName: 'Gill Sans MT',
+								fontSize:12
+							},
+							interactivity:true,
+							nodePadding:10
+						}
+					  }
+					};
+
+					// Instantiate and draw our chart, passing in some options.
+					var chart = new google.visualization.Sankey(document.getElementById('sankeyRefugee14'));
+					chart.draw(data, options);
+				   }
+				</script>
+			</div>
+			
+			<div class="row" style="margin-top:50px;">
+				<div class="col-md-12">
+					<p>European Refugee and Asylum Distribution by Origin and Destination, 2012</p>
+				</div>
+				
+				<div id="sankeyRefugee12" class="col-md-12" style="width:900px; height:400px;"></div>
+				
+				<script type="text/javascript">
+					google.charts.load("current", {packages:["sankey"]});
+					google.charts.setOnLoadCallback(drawChart);
+					function drawChart() {
+					var data = new google.visualization.DataTable();
+					data.addColumn('string', 'From');
+					data.addColumn('string', 'To');
+					data.addColumn('number', 'Population');
+					data.addRows([
+						[ 'Afghanistan', 'Germany', 46103 ],
+						[ 'Afghanistan', 'Turkey', 18104 ],
+						[ 'Afghanistan', 'United Kingdom', 11107 ],
+						[ 'Afghanistan', 'Sweden', 10807 ],
+						[ 'Afghanistan', 'Italy', 6220 ],
+						[ 'Afghanistan', 'France', 3185 ],
+						
+						[ 'Pakistan', 'Germany', 12379 ],
+						[ 'Pakistan', 'United Kingdom', 7677 ],
+						[ 'Pakistan', 'Italy', 4264 ],
+						[ 'Pakistan', 'France', 1752 ],
+						[ 'Pakistan', 'Sweden', 435 ],
+						[ 'Pakistan', 'Turkey', 54 ],
+						
+						[ 'Serbia and Kosovo', 'Germany', 124429 ],
+						[ 'Serbia and Kosovo', 'France', 12645 ],
+						[ 'Serbia and Kosovo', 'Sweden', 6056 ],
+						[ 'Serbia and Kosovo', 'Italy', 2793 ],
+						[ 'Serbia and Kosovo', 'United Kingdom', 2363 ],
+						
+						[ 'Somalia', 'Sweden', 21979 ],
+						[ 'Somalia', 'United Kingdom', 15609 ],
+						[ 'Somalia', 'Italy', 9778 ],
+						[ 'Somalia', 'Germany', 5606 ],
+						[ 'Somalia', 'Turkey', 2058 ],
+						[ 'Somalia', 'France', 1489 ],
+						
+						[ 'Syria', 'Turkey', 248666 ],
+						[ 'Syria', 'Germany', 24151 ],
+						[ 'Syria', 'Sweden', 9802 ],
+						[ 'Syria', 'United Kingdom', 2106 ],
+						[ 'Syria', 'Italy', 952 ],
+						[ 'Syria', 'France', 640 ],
+						
+						[ 'Turkey', 'Refugee', 253671 ],
+						[ 'Turkey', 'Asylum', 15211 ],
+						
+						[ 'Germany', 'Refugee', 174297 ],
+						[ 'Germany', 'Asylum', 38371 ],
+						
+						[ 'Sweden', 'Refugee', 38445 ],
+						[ 'Sweden', 'Asylum', 10634 ],
+						
+						[ 'France', 'Refugee', 16772 ],
+						[ 'France', 'Asylum', 2939 ],
+						
+						[ 'United Kingdom', 'Refugee', 33775 ],
+						[ 'United Kingdom', 'Asylum', 5087 ],
+						
+						[ 'Italy', 'Refugee', 19530 ],
+						[ 'Italy', 'Asylum', 4477 ]
+					]);
+
+					// Set chart options
+					var options = {
+					  width: 600,
+					  sankey: {
+						node: {
+							label:{
+								fontName: 'Gill Sans MT',
+								fontSize:12
+							},
+							interactivity:true,
+							nodePadding:10
+						}
+					  }
+					};
+
+					// Instantiate and draw our chart, passing in some options.
+					var chart = new google.visualization.Sankey(document.getElementById('sankeyRefugee12'));
 					chart.draw(data, options);
 				   }
 				</script>
