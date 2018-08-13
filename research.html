@@ -153,17 +153,22 @@
 
 					// Set chart options
 					var options = {
-					  width: 600,
-					  sankey: {
-						node: {
-							label:{
-								fontName: 'Gill Sans MT',
-								fontSize:12
-							},
-							interactivity:true,
-							nodePadding:10
+						width: 600,
+						sankey: {
+							node: {
+								label:{
+									fontName: 'Gill Sans MT',
+									fontSize:12
+								},
+								interactivity:true,
+								nodePadding:10
+							}
+						},
+						tooltip:{
+							textStyle:{
+								fontName:'Gill Sans MT'
+							}
 						}
-					  }
 					};
 
 					// Instantiate and draw our chart, passing in some options.
@@ -244,17 +249,22 @@
 
 					// Set chart options
 					var options = {
-					  width: 600,
-					  sankey: {
-						node: {
-							label:{
-								fontName: 'Gill Sans MT',
-								fontSize:12
-							},
+						width: 600,
+						sankey: {
+							node: {
+								label:{
+									fontName: 'Gill Sans MT',
+									fontSize:12
+								},
 							interactivity:true,
 							nodePadding:10
+							}
+						},
+						tooltip:{
+							textStyle:{
+								fontName:'Gill Sans MT'
+							}
 						}
-					  }
 					};
 
 					// Instantiate and draw our chart, passing in some options.
@@ -335,19 +345,23 @@
 
 					// Set chart options
 					var options = {
-					  width: 600,
-					  sankey: {
-						node: {
-							label:{
-								fontName: 'Gill Sans MT',
-								fontSize:12
-							},
+						width: 600,
+						sankey: {
+							node: {
+								label:{
+									fontName: 'Gill Sans MT',
+									fontSize:12
+								},
 							interactivity:true,
 							nodePadding:10
+							}
+						},
+						tooltip:{
+							textStyle:{
+								fontName:'Gill Sans MT'
+							}
 						}
-					  }
 					};
-
 					// Instantiate and draw our chart, passing in some options.
 					var chart = new google.visualization.Sankey(document.getElementById('sankeyRefugee12'));
 					chart.draw(data, options);
