@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Beichen Tian | Research</title>
+		<meta charset=utf-8>
+		<link rel="shortcut icon" type="favicon/ico" href="images/wistateicon.png" />
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/resume.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+			<div class="container">
+				<div class="navbar-header page-scroll">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNav">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="glyphicon glyphicon-menu-hamburger" style="color:gray"></span>
+						<span class="menu" style="color:gray"></span>
+					</button>
+					<a class="navbar-brand page-scroll" href="index.html">Beichen Tian</a>
+				</div>
+				<div id="myNav" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html#maps">Maps & Graphics</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="resume.html">Resume</a></li>
+						<li><a href="research.html">Research</a></li>
+						<li><a href="research/Final_Project_Report.pdf" target="_blank">MS Project</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						<li class="dropdown">
+							<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="padding-top:10%; display:inline-block;">
+								<img class="flag_menu" src="flags/48/us.png" alt="America Flag" hspace="5"><span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="https://beichentian-gis.github.io/about.html"><img class="flag" src="flags/48/us.png" alt="America Flag" hspace="7">English</a></li>
+								<li><a href="https://beichentian-gis.github.io/beichentian-GIS-cn.github.io/about.html"><img class="flag" src="flags/48/cn.png" alt="China Flag" hspace="7">中文</a></li>
+								<li><a href="https://beichentian-gis.github.io/beichentian-GIS-ru.github.io/about.html"><img class="flag" src="flags/48/ru.png" alt="Russia Flag" hspace="7">Русский</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<div class="col-md-12"><h2 style="margin-top:100px;">At A Glance: The "Come & Go" of Displaced Population...</h2></div>
+			<div class="row">
+				<div class="col-md-12">
+					<p>European Refugee and Asylum Distribution by Origin and Destination, 2016</p>
+				</div>
+				
+				<div id="sankeyRefugee16" class="col-md-12" style="width:900px; height:400px;"></div>
+				
+				<script type="text/javascript">
+					google.charts.load("current", {packages:["sankey"]});
+					google.charts.setOnLoadCallback(drawChart);
+					function drawChart() {
+					var data = new google.visualization.DataTable();
+					data.addColumn('string', 'From');
+					data.addColumn('string', 'To');
+					data.addColumn('number', 'Population');
+					data.addRows([
+						[ 'Afghanistan', 'Germany', 172814 ],
+						[ 'Afghanistan', 'Turkey', 118116 ],
+						[ 'Afghanistan', 'Sweden', 50775 ],
+						[ 'Afghanistan', 'Italy', 17959 ],
+						[ 'Afghanistan', 'United Kingdom', 12545 ],
+						[ 'Afghanistan', 'France', 11865 ],
+						/*[ 'Afghanistan', 'Spain', 350 ],*/
+						
+						[ 'Pakistan', 'Germany', 27917 ],
+						[ 'Pakistan', 'Italy', 24751 ],
+						[ 'Pakistan', 'United Kingdom', 9728 ],
+						[ 'Pakistan', 'France', 2897 ],
+						[ 'Pakistan', 'Sweden', 922 ],
+						[ 'Pakistan', 'Turkey', 830 ],
+						/*[ 'Pakistan', 'Spain', 557 ],*/
+						
+						/*[ 'Palestinian', 'Turkey', 1836 ],
+						[ 'Palestinian', 'Spain', 1420 ],
+						[ 'Palestinian', 'Sweden', 1356 ],
+						[ 'Palestinian', 'Italy', 1018 ],
+						[ 'Palestinian', 'France', 860 ],
+						[ 'Palestinian', 'United Kingdom', 628 ],*/
+						
+						[ 'Serbia and Kosovo', 'Germany', 25730 ],
+						[ 'Serbia and Kosovo', 'France', 15241 ],
+						[ 'Serbia and Kosovo', 'Italy', 3396 ],
+						[ 'Serbia and Kosovo', 'Sweden', 2600 ],
+						[ 'Serbia and Kosovo', 'United Kingdom', 168 ],
+						/*[ 'Serbia and Kosovo', 'Spain', 18 ],*/
+						
+						[ 'Somalia', 'Sweden', 26438 ],
+						[ 'Somalia', 'Germany', 23852 ],
+						[ 'Somalia', 'Italy', 15837 ],
+						[ 'Somalia', 'United Kingdom', 6359 ],
+						[ 'Somalia', 'France', 3715 ],
+						[ 'Somalia', 'Turkey', 3463 ],
+						/*[ 'Somalia', 'Spain', 710 ],*/
+						
+						/*[ 'South Sudan', 'Germany', 176 ],
+						[ 'South Sudan', 'Italy', 66 ],
+						[ 'South Sudan', 'United Kingdom', 33 ],
+						[ 'South Sudan', 'France', 8 ],
+						[ 'South Sudan', 'Turkey', 7 ],
+						[ 'South Sudan', 'Spain', 5 ],
+						[ 'South Sudan', 'Sweden', 5 ],*/
+						
+						[ 'Syria', 'Turkey', 2824167 ],
+						[ 'Syria', 'Germany', 475649 ],
+						[ 'Syria', 'Sweden', 103999 ],
+						[ 'Syria', 'France', 11140 ],
+						/*[ 'Syria', 'Spain', 9805 ],*/
+						[ 'Syria', 'United Kingdom', 9279 ],
+						[ 'Syria', 'Italy', 3161 ],
+						
+						[ 'Turkey', 'Refugee', 2829699 ],
+						[ 'Turkey', 'Asylum', 116877 ],
+						
+						[ 'Germany', 'Refugee', 443651 ],
+						[ 'Germany', 'Asylum', 282311 ],
+						
+						[ 'Sweden', 'Refugee', 138484 ],
+						[ 'Sweden', 'Asylum', 46250 ],
+						
+						[ 'France', 'Refugee', 33491 ],
+						[ 'France', 'Asylum', 11367 ],
+						
+						[ 'United Kingdom', 'Refugee', 30914 ],
+						[ 'United Kingdom', 'Asylum', 7165 ],
+						
+						[ 'Italy', 'Refugee', 49279 ],
+						[ 'Italy', 'Asylum', 15825 ],
+						
+						/*[ 'Refugee', 'Syria_', 3315896 ],
+						[ 'Refugee', 'Afghanistan_', 99743 ],
+						[ 'Refugee', 'Somalia_', 55480 ],
+						[ 'Refugee', 'Pakistan_', 26975 ],
+						[ 'Refugee', 'Serbia and Kosovo_', 27424 ],
+						
+						[ 'Asylum', 'Syria_', 111499 ],
+						[ 'Asylum', 'Afghanistan_', 284331 ],
+						[ 'Asylum', 'Somalia_', 24184 ],
+						[ 'Asylum', 'Pakistan_', 40070 ],
+						[ 'Asylum', 'Serbia and Kosovo_', 19711 ]*/
+					]);
+
+					// Set chart options
+					var options = {
+					  width: 600,
+					  sankey: {
+						node: {
+							label:{
+								fontName: 'Gill Sans MT',
+								fontSize:12
+							},
+							interactivity:true,
+							nodePadding:10
+						}
+					  }
+					};
+
+					// Instantiate and draw our chart, passing in some options.
+					var chart = new google.visualization.Sankey(document.getElementById('sankeyRefugee16'));
+					chart.draw(data, options);
+				   }
+				</script>
+			</div>
+		</div>
+		
+		<footer class="site-footer">
+			<div class="footer-col-wrapper">
+				<div class="container">
+					<div class="row">
+						<div id="end" class="col-md-12">
+							<ul class="social-media">
+								<li style="font-size:20px; font-family:Gill Sans MT">Let's talk about maps!</li>
+								<li>
+									<a href="mailto:btian8@wisc.edu" class="fa fa-envelope" style="font-size:20px" target="_blank">
+										<span class="email" style="font-family:Gill Sans MT">but221@psu.edu</span>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.linkedin.com/in/beichentiangis" class="fa fa-linkedin" style="font-size:20px" target="_blank">
+										<span class="username" style="font-family:Gill Sans MT">Beichen Tian</span>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/beichentian-GIS" class="fa fa-github" style="font-size:20px" target="_blank">
+										<span class="username" style="font-family:Gill Sans MT">beichentian-GIS</span>
+									</a>
+								</li>
+								<li>
+									<span style="font-size:20px; font-family:Gill Sans MT">You are the</span>
+									<!-- Begin Web-Stat code v 6.2 -->
+									<span id="wts1419696">&nbsp;</span><script type="text/javascript">
+									var wts=document.createElement('script');wts.type='text/javascript';
+									wts.async=true;wts.src=('https:'==document.location.protocol?'https://server2':'http://lb')
+									+'.web-stat.com/4/1419696/log6_2.js';
+									document.getElementById('wts1419696').appendChild(wts);
+									</script><noscript><a href="http://www.web-stat.com"></a></noscript>
+									<span style="font-size:20px; font-family:Gill Sans MT">visitors.</span>
+									<!-- End Web-Stat code v 6.2 -->
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+			<script type="text/javascript" src="/assets/javascripts/bootstrap.js"></script>
+		</footer>
+	</body>
+</html>
