@@ -10,6 +10,32 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			  // Add smooth scrolling to all links
+			  $("a").on('click', function(event) {
+
+				// Make sure this.hash has a value before overriding default behavior
+				if (this.hash !== "") {
+				  // Prevent default anchor click behavior
+				  event.preventDefault();
+
+				  // Store hash
+				  var hash = this.hash;
+
+				  // Using jQuery's animate() method to add smooth page scroll
+				  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+				  $('html, body').animate({
+					scrollTop: $(hash).offset().top
+				  }, 800, function(){
+			   
+					// Add hash (#) to URL when done scrolling (default click behavior)
+					window.location.hash = hash;
+				  });
+				} // End if
+			  });
+			});
+		</script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	</head>
 	<body>
@@ -53,18 +79,28 @@
 		</div-->
 		
 		<div class="container">
+			<a id="scrollhere"></a>
 			<div class="row">
 				<div class="col-md-12"><h2 style="margin-top:100px;">Me</h2></div>
 				<div class="col-md-8">
 					<p>Hi! My name is Beichen!</p>
-					<p>I am the creator of the Little Map House, plus, a map nerd on his way of pursuing a PhD in GIScience at the <a href="https://www.geog.psu.edu/" target="_blank">Pennsylvania State University</a>.</p>
+					<p>I am the creator of the Little Map House, plus, a map/ visualization nerd， and an Asian foodie.</p>
 					<!--p>I am a geospatial analyst, an emerging cartographer, and an amateur planner.</p-->
 					<p>I create each map with a unique personality to display their messages and information.</p>
-					<p>Before coming to State College, I worked at the Gibbs Land Use and Environment Lab researching agricultural changes and energy impacts, mined open land use data, created geo-graphics, and continue to be inspired by all the amazing humans I worked with. Earlier, I completed my bachelor’s degree in Natural Resource Management at <a href="http://www.scnu.edu.cn/" target="_blank">South China Normal University</a> (Guangzhou) and hold a Master’s degree in Urban and Regional Planning with a certificate in GIS from the <a href="https://geography.wisc.edu/" target="_blank">University of Wisconsin-Madison</a>. I plan to study migration and social communication patterns of refugees from spatial and temporal perspectives, which, will involve research topics/ interests such as social flows and networks, human movement under conflicts, urban planning, and their geovisualizations.</p>	
+					<p>I have previous working experiences as a postgraduate researcher at the 
+					<a href="https://www.geog.psu.edu/" target="_blank">Department of Geography</a> in Penn State, 
+					and at the Gibbs Land Use and Environment Lab under the <a href="https://nelson.wisc.edu/" 
+					target="_blank">Nelson Institute for Environmental Studies</a>. I have been continuously inspired 
+					by all the amazing humans I worked with. I currrently hold a Master’s degree in Urban and Regional 
+					Planning with a certificate in GIS from the <a href="https://geography.wisc.edu/" target="_blank">
+					University of Wisconsin-Madison</a>. I am interested in studying and utilizing knowledge in fields 
+					of data science, human-computer interaction, visual storytelling, etc. to make insights in spatial 
+					phenomena more discernible and intelligible.</p>	
+					<!--p>Before coming to State College, I worked at the Gibbs Land Use and Environment Lab researching agricultural changes and energy impacts, mined open land use data, created geo-graphics, and continue to be inspired by all the amazing humans I worked with. Earlier, I completed my bachelor’s degree in Natural Resource Management at <a href="http://www.scnu.edu.cn/" target="_blank">South China Normal University</a> (Guangzhou) and hold a Master’s degree in Urban and Regional Planning with a certificate in GIS from the <a href="https://geography.wisc.edu/" target="_blank">University of Wisconsin-Madison</a>. I plan to study migration and social communication patterns of refugees from spatial and temporal perspectives, which, will involve research topics/ interests such as social flows and networks, human movement under conflicts, urban planning, and their geovisualizations.</p-->	
 					<!--p></p-->
 				</div>
 				
-				<div class="col-md-4">
+				<div class="col-md-4 col-sm-6 col-xs-12">
 					<div class="thumbnail portfolio-thumbnail">
 						<img src="images/profile photo.jpg"/>
 					</div>
@@ -146,6 +182,10 @@
 			</div>
 		</div>
 		
+		<div style="text-align:center">
+			<a href = "#scrollhere">Back to Top &#x2191 </a>
+		</div>
+		
 		<footer class="site-footer">
 			<div class="footer-col-wrapper">
 				<div class="container">
@@ -154,18 +194,18 @@
 							<ul class="social-media">
 								<li style="font-size:20px; font-family:Gill Sans MT">Let's talk about maps!</li>
 								<li>
-									<a href="mailto:btian8@wisc.edu" class="fa fa-envelope" style="font-size:20px" target="_blank">
-										<span class="email" style="font-family:Gill Sans MT">but221@psu.edu</span>
+									<a href="mailto:btianGeo@outlook.com" class="fa fa-envelope" style="font-size:20px" target="_blank" title="Email">
+										<span class="email" style="font-family:Gill Sans MT"></span>
 									</a>
 								</li>
 								<li>
-									<a href="https://www.linkedin.com/in/beichentiangis" class="fa fa-linkedin" style="font-size:20px" target="_blank">
-										<span class="username" style="font-family:Gill Sans MT">Beichen Tian</span>
+									<a href="https://www.linkedin.com/in/beichentiangis" class="fa fa-linkedin" style="font-size:20px" target="_blank" title="LinkedIn">
+										<span class="username" style="font-family:Gill Sans MT"></span>
 									</a>
 								</li>
 								<li>
-									<a href="https://github.com/beichentian-GIS" class="fa fa-github" style="font-size:20px" target="_blank">
-										<span class="username" style="font-family:Gill Sans MT">beichentian-GIS</span>
+									<a href="https://github.com/beichentian-GIS" class="fa fa-github" style="font-size:20px" target="_blank" title="GitHub">
+										<span class="username" style="font-family:Gill Sans MT"></span>
 									</a>
 								</li>
 								<li>

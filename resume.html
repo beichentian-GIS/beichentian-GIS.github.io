@@ -10,6 +10,32 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			  // Add smooth scrolling to all links
+			  $("a").on('click', function(event) {
+
+				// Make sure this.hash has a value before overriding default behavior
+				if (this.hash !== "") {
+				  // Prevent default anchor click behavior
+				  event.preventDefault();
+
+				  // Store hash
+				  var hash = this.hash;
+
+				  // Using jQuery's animate() method to add smooth page scroll
+				  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+				  $('html, body').animate({
+					scrollTop: $(hash).offset().top
+				  }, 800, function(){
+			   
+					// Add hash (#) to URL when done scrolling (default click behavior)
+					window.location.hash = hash;
+				  });
+				} // End if
+			  });
+			});
+		</script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	</head>
 	<body>
@@ -48,8 +74,31 @@
 		
 		<div class="page-content">
 			<div class="container resume">
+				<a id="scrollhere"></a>
 				<div class="row resume-section">
 					<div class="col-md-12"><h2 style="margin-top:100px;">Professional Experiences</h2></div>
+					<div class="col-md-12 resume-work-section">
+						<div class="col-sm-4 col-md-3 job-logo-container">
+							<a href="https://www.e-education.psu.edu/maps/syllabus" title="Click to view the website">
+								<img class="job-logo" src="resume/PSU-logo.png">
+							</a>
+						</div>
+						<div class="col-sm-8 col-md-9 job-discription-container">
+							<h3 class="job header">
+								Department of Geography
+								<small style="font-size:20px; font-family:Gill Sans MT">Graduate Teaching Assistant</small>
+							</h3>
+							<h4 class="job-time-location">
+								<strong>January - May 2019</strong>
+								| State College, Pennsylvania
+								<p class="job-description">
+									<br>&#8226 Taught total four lab sections per week for GEOG 6N: Maps and Geospatial Revolution.</br>
+									<br>&#8226 Guided and graded students' lab assignments.</br>
+									<br>&#8226 Delivered guest lecture talks on featured cartography topics.</br>
+								</p>
+							</h4>
+						</div>
+					</div>
 					<div class="col-md-12 resume-work-section">
 						<div class="col-sm-4 col-md-3 job-logo-container">
 							<a href="http://sites.psu.edu/friendlycitieslab2/team/" title="Click to view the website">
@@ -62,7 +111,7 @@
 								<small style="font-size:20px; font-family:Gill Sans MT">Graduate Research Assistant</small>
 							</h3>
 							<h4 class="job-time-location">
-								<strong>September 2018 - Present</strong>
+								<strong>August - December 2018</strong>
 								| State College, Pennsylvania
 								<p class="job-description">
 									<br>&#8226 Analyzed geographic distribution, intensity, and network structure of telecommunication flows (e.g. SMS/ text messages, phone calls) between Syrian refugees in Turkey and Turkish natives in 2017.</br>
@@ -247,7 +296,6 @@
 							<p class="skill-description">
 								<br>ArcGIS10.X</br>
 								<br>ArcGIS Pro</br>
-								<br>Web AppBuilder</br>
 								<br>ESRI Story Map</br>
 								<br>QGIS</br>
 								<br>ENVI4.8</br>
@@ -260,7 +308,6 @@
 								<br>Adobe Illustrator CC</br>
 								<br>Adobe Photoshop CC</br>
 								<br>Adobe InDesign CC</br>
-								<br>Processing</br>
 								<br>Blender</br>
 								<br>Sketchup</br>
 								<br>Lumion</br>
@@ -271,12 +318,11 @@
 							<p class="skill-description">
 								<br>Python 2.7</br>
 								<br>HTML / CSS</br>
+								<br>JavaScript / jQuery / D3</br>
 								<br>LaTex</br>
-								<br>JavaScript / jQuery</br>
-								<br>R (learning)</br>
+								<br>R</br>
 								<br>GDAL & OGR</br>
-								<br>Windows Command Line</br>
-								<br>PostgreSQL / PostGIS</br>
+								<!--br>PostgreSQL / PostGIS</br-->
 							</p>
 						</div>
 					</div>
@@ -366,7 +412,7 @@
 				<hr class="resume-hr">
 				<div class="row resume-section">
 					<div class="col-md-12"><h2>Education</h2></div>
-					<div class="col-md-12 resume-work-section">
+					<!--div class="col-md-12 resume-work-section">
 						<div class="col-sm-4 col-md-3 job-logo-container">
 							<img class="educate-logo" src="resume/PSU-logo.png">
 						</div>
@@ -381,7 +427,7 @@
 							</h4>
 							<p class="job-description"></p>
 						</div>
-					</div>
+					</div-->
 					<div class="col-md-12 resume-work-section">
 						<div class="col-sm-4 col-md-3 job-logo-container">
 							<img class="educate-logo" src="resume/Uw-madison-logo.png">
@@ -452,6 +498,7 @@
 					<div class="col-md-12"><h2>Awards & Honors</h2></div>
 					<div class="col-sm-12 resume-skills-section">
 						<p class="skill-description">
+							<br>05/2019 Academic Enrichment Funding for AAG conference travel, PSU</br>
 							<br>05/2018 The Second Place for Barbara Bartz Petchenik Memorial Award in Cartographic Design, UW-Madison</br>
 							<br>05/2017 Honorable Mention for Barbara Bartz Petchenik Memorial Award in Cartographic Design, UW-Madison</br>
 							<br>02/2017 Runner-Up for The Most Unique Map in 2017 WLIA Map and Poster Competition, Wisconsin Land Information Association</br>
@@ -504,8 +551,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-12"><center><h3><a href="resume\Resume.pdf">Please download the full version of resume here (PDF).</a></h3></center></div>
+				<div class="col-md-12"><center><h3><a href="resume\Resume.pdf">Download the PDF resume here.</a></h3></center></div>
 			</div>
+		</div>
+		
+		<div style="text-align:center">
+			<a href = "#scrollhere">Back to Top &#x2191 </a>
 		</div>
 		
 		<footer class="site-footer">
@@ -516,18 +567,18 @@
 							<ul class="social-media">
 								<li style="font-size:20px; font-family:Gill Sans MT">Let's talk about maps!</li>
 								<li>
-									<a href="mailto:btian8@wisc.edu" class="fa fa-envelope" style="font-size:20px" target="_blank">
-										<span class="email" style="font-family:Gill Sans MT">but221@psu.edu</span>
+									<a href="mailto:btianGeo@outlook.com" class="fa fa-envelope" style="font-size:20px" target="_blank" title="Email">
+										<span class="email" style="font-family:Gill Sans MT"></span>
 									</a>
 								</li>
 								<li>
-									<a href="https://www.linkedin.com/in/beichentiangis" class="fa fa-linkedin" style="font-size:20px" target="_blank">
-										<span class="username" style="font-family:Gill Sans MT">Beichen Tian</span>
+									<a href="https://www.linkedin.com/in/beichentiangis" class="fa fa-linkedin" style="font-size:20px" target="_blank" title="LinkedIn">
+										<span class="username" style="font-family:Gill Sans MT"></span>
 									</a>
 								</li>
 								<li>
-									<a href="https://github.com/beichentian-GIS" class="fa fa-github" style="font-size:20px" target="_blank">
-										<span class="username" style="font-family:Gill Sans MT">beichentian-GIS</span>
+									<a href="https://github.com/beichentian-GIS" class="fa fa-github" style="font-size:20px" target="_blank" title="GitHub">
+										<span class="username" style="font-family:Gill Sans MT"></span>
 									</a>
 								</li>
 								<li>
