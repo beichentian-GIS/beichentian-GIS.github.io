@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Beichen Tian | Blog</title>
+		<meta charset=utf-8>
+		<link rel="shortcut icon" type="favicon/ico" href="images/wistateicon.png" />
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/resume.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+			<div class="container">
+				<div class="navbar-header page-scroll">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNav">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="glyphicon glyphicon-menu-hamburger" style="color:gray"></span>
+						<span class="menu" style="color:gray"></span>
+					</button>
+					<a class="navbar-brand page-scroll" href="index.html">Beichen Tian</a>
+				</div>
+				<div id="myNav" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html#maps">Maps & Graphics</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="resume.html">Resume</a></li>
+						<li><a href="research.html">Blog</a></li>
+						<li><a href="research/Final_Project_Report.pdf" target="_blank">MS Project</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						<li class="dropdown">
+							<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="padding-top:10%; display:inline-block;">
+								<img class="flag_menu" src="flags/48/us.png" alt="America Flag" hspace="5"><span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="https://beichentian-gis.github.io/about.html"><img class="flag" src="flags/48/us.png" alt="America Flag" hspace="7">English</a></li>
+								<li><a href="https://beichentian-gis.github.io/beichentian-GIS-cn.github.io/about.html"><img class="flag" src="flags/48/cn.png" alt="China Flag" hspace="7">中文</a></li>
+								<li><a href="https://beichentian-gis.github.io/beichentian-GIS-ru.github.io/about.html"><img class="flag" src="flags/48/ru.png" alt="Russia Flag" hspace="7">Русский</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<div class="col-md-12">
+				<h2 style="margin-top:100px;">
+					Footprints by Phone Calls: Where, How, and Why?
+				</h2>
+				<h4 style="line-height: 1.5em;">
+					<p style="margin-top:20px; font-style:normal">
+						After exploring general telecommunication patterns (e.g., Refugee Caller Diversity) of refugees and natives in Turkey, we became interetsed 
+						in potentially reasoning research questions exclusively related with refugee caller individuals: Where are the locations that each refugee 
+						caller have ever placed calls to either Turkish natives or to other refugees? How were these locations connected and evolved over time?
+						How are the telecommunication patterns like for those refugee callers displaying high levels of social integration? Are there any factors 
+						we can use to explain these phenomena? The map below opened the gate of knowledge to explore the questions above. For making this map, 1) 
+						a refugee caller's activity space was defined as 1000-meter (10 minutes walking) buffers around all the base station locations that a caller 
+						had ever placed calls at; all the 1000-meter buffers of the same callers were then dissolved into one activity space polygon in order to avoid 
+						double-counting the areas of activity spaces; 2) For the same refugee caller, each of their recorded locations of calls was connected based on 
+						the sequence of time that each relevant call was placed; as a result, this generated possible travel trajectory for each refugee caller; 3) 
+						level of social integration for a refugee caller was defined as the percentage of calls that the refugee placed to Turkish natives over the total
+						calls the refugee placed across all the base stations where his/ her calls were recorded; such measure, in the map below, is represented by the 
+						classified colors and it is not location-sensitive.
+					</p>
+				</h4>
+			</div>
+			
+			<div class="col-md-12">
+				<div class="thumbnail portfolio-thumbnail">
+					<img src="research/ActivitySpace_Animated.gif"/>
+				</div>
+			</div>
+			
+			<div class="col-md-12">
+				<p style="text-align:center">Figure1: Refugee individual activity spaces and trajectories from 1/1/17 to 12/31/17 &#x2191.</p>
+				<p></p>
+			</div>
+		</div>
+		
+		<footer class="site-footer">
+			<div class="footer-col-wrapper">
+				<div class="container">
+					<div class="row">
+						<div id="end" class="col-md-12">
+							<ul class="social-media">
+								<li style="font-size:20px; font-family:Gill Sans MT">Let's talk about maps!</li>
+								<li>
+									<a href="mailto:btianGeo@outlook.com" class="fa fa-envelope" style="font-size:20px" target="_blank" title="Email">
+										<span class="email" style="font-family:Gill Sans MT"></span>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.linkedin.com/in/beichentiangis" class="fa fa-linkedin" style="font-size:20px" target="_blank" title="LinkedIn">
+										<span class="username" style="font-family:Gill Sans MT"></span>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/beichentian-GIS" class="fa fa-github" style="font-size:20px" target="_blank" title="GitHub">
+										<span class="username" style="font-family:Gill Sans MT"></span>
+									</a>
+								</li>
+								<li>
+									<span style="font-size:20px; font-family:Gill Sans MT">You are the</span>
+									<!-- Begin Web-Stat code v 6.2 -->
+									<span id="wts1419696">&nbsp;</span><script type="text/javascript">
+									var wts=document.createElement('script');wts.type='text/javascript';
+									wts.async=true;wts.src=('https:'==document.location.protocol?'https://server2':'http://lb')
+									+'.web-stat.com/4/1419696/log6_2.js';
+									document.getElementById('wts1419696').appendChild(wts);
+									</script><noscript><a href="http://www.web-stat.com"></a></noscript>
+									<span style="font-size:20px; font-family:Gill Sans MT">visitors.</span>
+									<!-- End Web-Stat code v 6.2 -->
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+			<script type="text/javascript" src="/assets/javascripts/bootstrap.js"></script>
+		</footer>
+	</body>
+</html>
