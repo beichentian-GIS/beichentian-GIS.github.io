@@ -1,0 +1,23 @@
+name,parent,icon
+Hyrachyus,null,https://beichentian-gis.github.io/research/rhino_images/Hyrachyus eximius.png
+Hyracodon,Hyrachyus,https://beichentian-gis.github.io/research/rhino_images/Hyracodon.png
+Metamynodon,Amynodon,https://beichentian-gis.github.io/research/rhino_images/Metamynodon.png
+Amynodon,Hyrachyus,https://beichentian-gis.github.io/research/rhino_images/Amynodon.png
+Subhyracodon,Hyrachyus,https://beichentian-gis.github.io/research/rhino_images/Subhyracodon-occidentalis-738x591.png
+Indricotherium,Hyracodon,https://beichentian-gis.github.io/research/rhino_images/Indricotherium-white-738x591.png
+Teleoceras,Subhyracodon,https://beichentian-gis.github.io/research/rhino_images/Teleoceras-(WB)-738x591.png
+Menoceras,Subhyracodon,https://beichentian-gis.github.io/research/rhino_images/Menoceras-738x591.png
+Sumatran Rhino,Subhyracodon,https://beichentian-gis.github.io/research/rhino_images/sumatran_rhinoceros.png
+Chilotherium,Subhyracodon,https://beichentian-gis.github.io/research/rhino_images/Chilotherium-(WB)-738x591.png
+Ceratotherium,Subhyracodon,https://beichentian-gis.github.io/research/rhino_images/Ceratotherium.png
+Elasmotherium sibiricum,Menoceras,https://beichentian-gis.github.io/research/rhino_images/Elasmotherium-sibiricum-(long-horn)a-738x591.png
+Elasmotherium caucasicum,Menoceras,https://beichentian-gis.github.io/research/rhino_images/Elasmotherium-caucasicum-(WB)-738x591.png
+Etruscan rhino,Sumatran Rhino,https://beichentian-gis.github.io/research/rhino_images/Stephanorhinus-etruscus-(summer)-738x591.png
+Black Rhino,Ceratotherium,https://beichentian-gis.github.io/research/rhino_images/black_rhinoceros.png
+White Rhino,Ceratotherium,https://beichentian-gis.github.io/research/rhino_images/white_rhinoceros.png
+Merck's rhino,Etruscan rhino,https://beichentian-gis.github.io/research/rhino_images/Stephanorhinus-kirchbergensis-738x591.png
+Narrow-nosed Rhino,Etruscan rhino,https://beichentian-gis.github.io/research/rhino_images/Stephanorhinus-hemitoechus-white-738x591.png
+Javan Rhino,Sumatran Rhino,https://beichentian-gis.github.io/research/rhino_images/javan_rhinoceros.png
+Indian Rhino,Sumatran Rhino,https://beichentian-gis.github.io/research/rhino_images/indian_rhinoceros.png
+Coelodonta,Sumatran Rhino,https://beichentian-gis.github.io/research/rhino_images/Coelodonta-antiquitatis-(WB)-738x591.png
+Rhinoceros sinensis,Sumatran Rhino,https://beichentian-gis.github.io/research/rhino_images/Rhinoceros-sinensis-(WB)-738x591.png

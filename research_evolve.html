@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Beichen Tian | Blog</title>
+		<meta charset=utf-8>
+		<link rel="shortcut icon" type="favicon/ico" href="images/wistateicon.png" />
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/resume.css">
+		<link rel="stylesheet" href="css/treemap.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+			<div class="container">
+				<div class="navbar-header page-scroll">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNav">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="glyphicon glyphicon-menu-hamburger" style="color:gray"></span>
+						<span class="menu" style="color:gray"></span>
+					</button>
+					<a class="navbar-brand page-scroll" href="index.html">Beichen Tian</a>
+				</div>
+				<div id="myNav" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html#maps">Maps & Graphics</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="resume.html">Resume</a></li>
+						<li><a href="research.html">Blog</a></li>
+						<li><a href="research/Final_Project_Report.pdf" target="_blank">MS Project</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						<li class="dropdown">
+							<button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" style="padding-top:10%; display:inline-block;">
+								<img class="flag_menu" src="flags/48/us.png" alt="America Flag" hspace="5"><span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="https://beichentian-gis.github.io/about.html"><img class="flag" src="flags/48/us.png" alt="America Flag" hspace="7">English</a></li>
+								<li><a href="https://beichentian-gis.github.io/beichentian-GIS-cn.github.io/about.html"><img class="flag" src="flags/48/cn.png" alt="China Flag" hspace="7">中文</a></li>
+								<li><a href="https://beichentian-gis.github.io/beichentian-GIS-ru.github.io/about.html"><img class="flag" src="flags/48/ru.png" alt="Russia Flag" hspace="7">Русский</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<div class="col-md-12">
+				<h2 style="margin-top:100px;">
+					The Creatures That We Have Met or Passed By
+				</h2>
+				<h4 style="line-height: 1.5em;">
+					Always a fan of prehistoric palaeontology since I was a child. Tracing back and figuring out   
+					prehistoric species' taxonomies and evolutionary relationships are like finding subtile 
+					evidences between each historic person recorded within a thick history book. Indeed, the 
+					process was not easy. But, it was rewarding since I was able to vividly retrospect how species 
+					had emerged, flourished, and unfortunately...perished. By looking at other species' evolution 
+					paths, perhaps, we as humans, can know ourselves better and can come up with sustainable ways,
+				    which may guarantee not only our survival, but also others'.
+				</h4>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<p style="font-weight: bold;">Elephant Evolution Tree (not scaled by the species' actual sizes)</p>
+				</div>
+				
+				<div id="treegram" class="col-md-12"></div>
+				
+				<script src="js/d3.v3.min.js"></script>
+				<script src="js/d3.layout.min.js"></script>
+				
+				<script>
+					// ************** Generate the tree diagram	 *****************
+					var margin = {top: 20, right: 120, bottom: 20, left: 120},
+						width = 1000 - margin.right - margin.left,
+						height = 700 - margin.top - margin.bottom;
+						
+					var i = 0;
+
+					var tree = d3.layout.tree()
+						.size([height, width]);
+
+					var diagonal = d3.svg.diagonal()
+						.projection(function(d) { return [d.y, d.x]; });
+
+					var svg = d3.select("#treegram")
+						.append("svg")
+							.attr("width", width + margin.right + margin.left)
+							.attr("height", height + margin.top + margin.bottom)
+						.append("g")
+							.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+					// load the external data
+					d3.csv("research/evolve_elephant.csv", function(error, data) {
+
+					// *********** Convert flat data into a nice tree ***************
+					// create a name: node map
+					var dataMap = data.reduce(function(map, node) {
+						map[node.name] = node;
+						return map;
+					}, {});
+
+					// create the tree array
+					var treeData = [];
+					data.forEach(function(node) {
+						// add to parent
+						var parent = dataMap[node.parent];
+						if (parent) {
+							// create child array if it doesn't exist
+							(parent.children || (parent.children = []))
+								// add node to child array
+								.push(node);
+						} else {
+							// parent is null or missing
+							treeData.push(node);
+						}
+					});
+
+					  root = treeData[0];
+					  update(root);
+					});
+
+					function update(source) {
+
+						// Compute the new tree layout.
+						var nodes = tree.nodes(root).reverse(),
+							links = tree.links(nodes);
+
+						// Normalize for fixed-depth.
+						nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+						// Declare the nodesâ€¦
+						var node = svg.selectAll("g.node")
+							.data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+						// Enter the nodes.
+						var nodeEnter = node.enter().append("g")
+							.attr("class", "node")
+							.attr("transform", function(d) { 
+							 return "translate(" + d.y + "," + d.x + ")"; });
+
+						// adds images as nodes
+						node.append("image")
+							.attr("xlink:href", function(d) { return d.icon; })
+							.attr("x", "-12px")
+							.attr("y", "-30px")
+							.attr("width", "50px")
+							.attr("height", "50px");
+						//nodeEnter.append("circle")
+							//.attr("r", 10)
+							//.style("fill", "#fff");
+
+						nodeEnter.append("text")
+							.attr("x", function(d) { 
+								return d.children || d._children ? -13 : 45; })
+							.attr("dy", ".35em")
+							.style("text-anchor", function(d) { 
+								return d.children || d._children ? "end" : "start"; })
+							.text(function(d) { return d.name; })
+							.style("fill-opacity", 1)
+							.on('click', click);;
+
+						// Declare the linksâ€¦
+						var link = svg.selectAll("path.link")
+							.data(links, function(d) { return d.target.id; });
+
+						// Enter the links.
+						link.enter().insert("path", "g")
+							.attr("class", "link")
+							.attr("d", diagonal);
+						
+						// Toggle children on click.
+						function click(d) {
+							if (d.children) {
+								d._children = d.children;
+								d.children = null;
+							  } else {
+								d.children = d._children;
+								d._children = null;
+							  }
+							update(d);
+						}
+					}
+				</script>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<p style="font-weight: bold;">Rhinoceros Evolution Tree (not scaled by the species' actual sizes)</p>
+				</div>
+				
+				<div id="treegram2" class="col-md-12"></div>
+				
+				<script src="js/d3.v3.min.js"></script>
+				<script src="js/d3.layout.min.js"></script>
+				
+				<script>
+					// ************** Generate the tree diagram	 *****************
+					var margin = {top: 20, right: 100, bottom: 20, left: 100},
+						width = 1200 - margin.right - margin.left,
+						height = 800 - margin.top - margin.bottom;
+						
+					var i = 0;
+
+					var tree = d3.layout.tree()
+						.size([height, width]);
+
+					var diagonal = d3.svg.diagonal()
+						.projection(function(d) { return [d.y, d.x]; });
+
+					var svg = d3.select("#treegram2")
+						.append("svg")
+							.attr("width", width + margin.right + margin.left)
+							.attr("height", height + margin.top + margin.bottom)
+						.append("g")
+							.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+					// load the external data
+					d3.csv("research/evolve_rhino.csv", function(error, data) {
+
+					// *********** Convert flat data into a nice tree ***************
+					// create a name: node map
+					var dataMap = data.reduce(function(map, node) {
+						map[node.name] = node;
+						return map;
+					}, {});
+
+					// create the tree array
+					var treeData = [];
+					data.forEach(function(node) {
+						// add to parent
+						var parent = dataMap[node.parent];
+						if (parent) {
+							// create child array if it doesn't exist
+							(parent.children || (parent.children = []))
+								// add node to child array
+								.push(node);
+						} else {
+							// parent is null or missing
+							treeData.push(node);
+						}
+					});
+
+					  root = treeData[0];
+					  update(root);
+					});
+
+					function update(source) {
+
+						// Compute the new tree layout.
+						var nodes = tree.nodes(root).reverse(),
+							links = tree.links(nodes);
+
+						// Normalize for fixed-depth.
+						nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+						// Declare the nodesâ€¦
+						var node = svg.selectAll("g.node")
+							.data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+						// Enter the nodes.
+						var nodeEnter = node.enter().append("g")
+							.attr("class", "node")
+							.attr("transform", function(d) { 
+							 return "translate(" + d.y + "," + d.x + ")"; });
+
+						// adds images as nodes
+						node.append("image")
+							.attr("xlink:href", function(d) { return d.icon; })
+							.attr("x", "-12px")
+							.attr("y", "-30px")
+							.attr("width", "50px")
+							.attr("height", "50px");
+						//nodeEnter.append("circle")
+							//.attr("r", 10)
+							//.style("fill", "#fff");
+
+						nodeEnter.append("text")
+							.attr("x", function(d) { 
+								return d.children || d._children ? -13 : 45; })
+							.attr("dy", ".35em")
+							.style("text-anchor", function(d) { 
+								return d.children || d._children ? "end" : "start"; })
+							.text(function(d) { return d.name; })
+							.style("fill-opacity", 1)
+							.on('click', click);;
+
+						// Declare the linksâ€¦
+						var link = svg.selectAll("path.link")
+							.data(links, function(d) { return d.target.id; });
+
+						// Enter the links.
+						link.enter().insert("path", "g")
+							.attr("class", "link")
+							.attr("d", diagonal);
+						
+						// Toggle children on click.
+						function click(d) {
+							if (d.children) {
+								d._children = d.children;
+								d.children = null;
+							  } else {
+								d.children = d._children;
+								d._children = null;
+							  }
+							update(d);
+						}
+					}
+				</script>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<p style="font-weight: bold;">Marsupials Evolution Tree (not scaled by the species' actual sizes)</p>
+				</div>
+				
+				<div id="treegram3" class="col-md-12"></div>
+				
+				<script src="js/d3.v3.min.js"></script>
+				<script src="js/d3.layout.min.js"></script>
+				
+				<script>
+					// ************** Generate the tree diagram	 *****************
+					var margin = {top: 20, right: 90, bottom: 20, left: 110},
+						width = 1300 - margin.right - margin.left,
+						height = 1100 - margin.top - margin.bottom;
+						
+					var i = 0;
+
+					var tree = d3.layout.tree()
+						.size([height, width]);
+
+					var diagonal = d3.svg.diagonal()
+						.projection(function(d) { return [d.y, d.x]; });
+
+					var svg = d3.select("#treegram3")
+						.append("svg")
+							.attr("width", width + margin.right + margin.left)
+							.attr("height", height + margin.top + margin.bottom)
+						.append("g")
+							.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+					// load the external data
+					d3.csv("research/evolve_marsupial.csv", function(error, data) {
+
+					// *********** Convert flat data into a nice tree ***************
+					// create a name: node map
+					var dataMap = data.reduce(function(map, node) {
+						map[node.name] = node;
+						return map;
+					}, {});
+
+					// create the tree array
+					var treeData = [];
+					data.forEach(function(node) {
+						// add to parent
+						var parent = dataMap[node.parent];
+						if (parent) {
+							// create child array if it doesn't exist
+							(parent.children || (parent.children = []))
+								// add node to child array
+								.push(node);
+						} else {
+							// parent is null or missing
+							treeData.push(node);
+						}
+					});
+
+					  root = treeData[0];
+					  update(root);
+					});
+
+					function update(source) {
+
+						// Compute the new tree layout.
+						var nodes = tree.nodes(root).reverse(),
+							links = tree.links(nodes);
+
+						// Normalize for fixed-depth.
+						nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+						// Declare the nodesâ€¦
+						var node = svg.selectAll("g.node")
+							.data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+						// Enter the nodes.
+						var nodeEnter = node.enter().append("g")
+							.attr("class", "node")
+							.attr("transform", function(d) { 
+							 return "translate(" + d.y + "," + d.x + ")"; });
+
+						// adds images as nodes
+						node.append("image")
+							.attr("xlink:href", function(d) { return d.icon; })
+							.attr("x", "-12px")
+							.attr("y", "-30px")
+							.attr("width", "50px")
+							.attr("height", "50px");
+						//nodeEnter.append("circle")
+							//.attr("r", 10)
+							//.style("fill", "#fff");
+
+						nodeEnter.append("text")
+							.attr("x", function(d) { 
+								return d.children || d._children ? -13 : 45; })
+							.attr("dy", ".35em")
+							.style("text-anchor", function(d) { 
+								return d.children || d._children ? "end" : "start"; })
+							.text(function(d) { return d.name; })
+							.style("fill-opacity", 1)
+							.on('click', click);;
+
+						// Declare the linksâ€¦
+						var link = svg.selectAll("path.link")
+							.data(links, function(d) { return d.target.id; });
+
+						// Enter the links.
+						link.enter().insert("path", "g")
+							.attr("class", "link")
+							.attr("d", diagonal);
+						
+						// Toggle children on click.
+						function click(d) {
+							if (d.children) {
+								d._children = d.children;
+								d.children = null;
+							  } else {
+								d.children = d._children;
+								d._children = null;
+							  }
+							update(d);
+						}
+					}
+				</script>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12" style="margin-top:50px;">
+					<p>Data Source: 
+					<a href = "https://prehistoric-fauna.com/" target="_blank">
+					Prehistoric Fauna
+					</a></p>
+				</div>
+			</div>
+		</div>
+		
+		<footer class="site-footer">
+			<div class="footer-col-wrapper">
+				<div class="container">
+					<div class="row">
+						<div id="end" class="col-md-12">
+							<ul class="social-media">
+								<li style="font-size:20px; font-family:Gill Sans MT">Let's talk about maps!</li>
+								<li>
+									<a href="mailto:btianGeo@outlook.com" class="fa fa-envelope" style="font-size:20px" target="_blank" title="Email">
+										<span class="email" style="font-family:Gill Sans MT"></span>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.linkedin.com/in/beichentiangis" class="fa fa-linkedin" style="font-size:20px" target="_blank" title="LinkedIn">
+										<span class="username" style="font-family:Gill Sans MT"></span>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/beichentian-GIS" class="fa fa-github" style="font-size:20px" target="_blank" title="GitHub">
+										<span class="username" style="font-family:Gill Sans MT"></span>
+									</a>
+								</li>
+								<li>
+									<span style="font-size:20px; font-family:Gill Sans MT">You are the</span>
+									<!-- Begin Web-Stat code v 6.2 -->
+									<span id="wts1419696">&nbsp;</span><script type="text/javascript">
+									var wts=document.createElement('script');wts.type='text/javascript';
+									wts.async=true;wts.src=('https:'==document.location.protocol?'https://server2':'http://lb')
+									+'.web-stat.com/4/1419696/log6_2.js';
+									document.getElementById('wts1419696').appendChild(wts);
+									</script><noscript><a href="http://www.web-stat.com"></a></noscript>
+									<span style="font-size:20px; font-family:Gill Sans MT">visitors.</span>
+									<!-- End Web-Stat code v 6.2 -->
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+			<script type="text/javascript" src="/assets/javascripts/bootstrap.js"></script>
+		</footer>
+	</body>
+</html>

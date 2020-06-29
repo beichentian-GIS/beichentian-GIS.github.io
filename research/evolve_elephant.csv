@@ -1,0 +1,18 @@
+name,parent,icon
+Phosphatherium,null,https://beichentian-gis.github.io/research/eleph_images/Phosphatherium-escuilliei1-738x591.png
+Phiomia,Phosphatherium,https://beichentian-gis.github.io/research/eleph_images/Phiomia-738x591.png
+Barytherium,Phosphatherium,https://beichentian-gis.github.io/research/eleph_images/Barytherium-grave-(WB)-738x591.png
+Moeritherium,Phosphatherium,https://beichentian-gis.github.io/research/eleph_images/Moeritherium-lyonsi-738x591.png
+Deinotherium,Phosphatherium,https://beichentian-gis.github.io/research/eleph_images/Deinotherium-gigantissimum-white1-738x591.png
+Palaeomastodon,Phosphatherium,https://beichentian-gis.github.io/research/eleph_images/Palaeomastodon-beadnelli-738x591.png
+Mastodon,Palaeomastodon,https://beichentian-gis.github.io/research/eleph_images/Mammut-americanum-(WB)-738x591.png
+Zygolophodon,Palaeomastodon,https://beichentian-gis.github.io/research/eleph_images/Zygolophodon-borsoni-size-738x591.png
+Platybelodon,Palaeomastodon,https://beichentian-gis.github.io/research/eleph_images/Platybelodon-white1-738x591.png
+Gomphotherium,Palaeomastodon,https://beichentian-gis.github.io/research/eleph_images/Gomphotherium-angustidens-2016-738x591.png
+Stegotetrabelodon,Gomphotherium,https://beichentian-gis.github.io/research/eleph_images/Stegotetrabelodon-(WB)-738x591.png
+Anancus,Gomphotherium,https://beichentian-gis.github.io/research/eleph_images/Anancus-arvernensis-2015-738x591.png
+Stegodon,Gomphotherium,https://beichentian-gis.github.io/research/eleph_images/Stegodon-insignis-738x591.png
+Primelephas,Gomphotherium,https://i.imgur.com/hR5IHdm.png
+Loxodonta Africana,Primelephas,https://beichentian-gis.github.io/research/eleph_images/AfricanEle.png
+Mammuthus,Primelephas,https://beichentian-gis.github.io/research/eleph_images/Mammuthus-jeffersonii-(WB)1-738x591.png
+Elephas Maximus,Primelephas,https://beichentian-gis.github.io/research/eleph_images/AsianEle.png
